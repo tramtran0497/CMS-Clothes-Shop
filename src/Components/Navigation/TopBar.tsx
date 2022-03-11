@@ -4,7 +4,7 @@ import ChatIcon from "@material-ui/icons/Chat";
 import ArrowDropDownCircleIcon from "@material-ui/icons/ArrowDropDownCircle";
 import AppsIcon from "@material-ui/icons/Apps";
 import Badge from "@material-ui/core/Badge";
-import { Container, Logo, List, ListItem, Image } from "./NavigationStyles";
+import { TopBarContainer, Logo, List, ListItem, Image } from "./NavigationStyles";
 import { SupportList } from "./SupportList";
 import { AppList } from "./AppList";
 
@@ -26,7 +26,7 @@ export const TopBar: React.FC<TopBarProps> = () => {
     }
   };
   return (
-    <Container>
+    <TopBarContainer>
       <Logo>Tram.Admin</Logo>
       <List direction="row" jtf="space-around" ali="center">
         <ListItem>
@@ -64,6 +64,6 @@ export const TopBar: React.FC<TopBarProps> = () => {
         </ListItem>
         {isShowSupport ? <SupportList /> : ""}
       </List>
-    </Container>
+    </TopBarContainer>
   );
 };

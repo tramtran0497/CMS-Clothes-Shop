@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { color } from "../../Styles/colors";
 
-export const Container = styled.div`
+export const TopBarContainer = styled.div`
   &::before {
     width: 100vw;
     height: 55px;
@@ -28,11 +28,6 @@ export const Logo = styled.h1`
   text-align: center;
   cursor: pointer;
 `;
-interface ListProps {
-  direction: string;
-  jtf: string;
-  ali: string;
-}
 export const List = styled.ul<ListProps>`
   width: 25%;
   display: flex;
@@ -49,12 +44,6 @@ export const ListItem = styled.li`
     cursor: pointer;
   }
 `;
-interface ImgProps {
-  wth: string;
-  hgt: string;
-  objf: string;
-  bordius: number;
-}
 export const Image = styled.img<ImgProps>`
   object-fit: ${(props) => props.objf};
   width: ${(props) => props.wth};
@@ -102,7 +91,7 @@ export const SupportListItemLeft = styled.div`
 export const Applist = styled.div`
   width: 350px;
   height: fit-content;
-  background-color: ${color.lightTheme_darker};
+  background-color: ${color.primary_lightest};
   border-radius: 10px;
   position: absolute;
   top: 49px;
@@ -117,10 +106,15 @@ export const AppListItem = styled.div`
   margin: 10px;
   border-bottom: 1px solid ${color.primary_lightest};
 `;
-export const Title = styled.h3`
+export const TitleAppList = styled.h3`
   font-size: 25px;
-  color: ${color.primary_lighter};
   font-weight: 500;
+  cursor: pointer;
+
+  a{
+    color: ${color.primary_darkest};
+    text-decoration: none;
+  }
 `;
 export const Item = styled.p`
   width: 100%;
@@ -133,7 +127,7 @@ export const Item = styled.p`
 
   &:hover,
   &:focus {
-    background-color: ${color.primary_lightest};
+    background-color: ${color.lightTheme_darker};
     border-radius: 10px;
   }
 `;

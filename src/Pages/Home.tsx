@@ -1,20 +1,18 @@
 import React from "react";
-import { Card } from "../Components/Analytics/Card";
-import { Chart } from "../Components/Analytics/Chart";
-import {CardWrap, Container} from "./HomeStyle";
+import { Analytics } from "../Components/Analytics/Analytics";
+import { TableTemplate } from "../Components/TableTemplate/TableTemplate";
+import {PageContainer} from "./HomeStyle";
+import {salesList, salesHeaders} from "../temporaryData"
 interface HomeProps{
 
 }
 
 export const Home: React.FC<HomeProps> = () => {
     return(
-        <Container>
-            <CardWrap>
-                <Card title="Sales" amount={4700} isIncreased={true}/>
-                <Card title="Cost" amount={3000} isIncreased={true}/>
-                <Card title="Revenue" amount={1700} isIncreased={false}/>
-            </CardWrap>
-            <Chart/>
-        </Container>
+        <PageContainer>
+            <Analytics/>
+            <TableTemplate list={salesList} headers={salesHeaders} title="Sales"/>
+        </PageContainer>
     )
 }
+

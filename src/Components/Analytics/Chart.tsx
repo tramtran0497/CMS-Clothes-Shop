@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerChart } from "./AnalyticsStyles";
+import { ContainerChart, TitleChart } from "./AnalyticsStyles";
 import {
   LineChart,
   Line,
@@ -9,63 +9,19 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import {chartLineData} from "../../temporaryData"
 
 interface LineChartProps {}
-
-interface Data {
-  name: string;
-  sales: number;
-  cost: number;
-  revenue: number;
-}
-// Temporary data
-const data: Data[] = [
-  {
-    name: "January",
-    sales: 5000,
-    cost: 2100,
-    revenue: 2900,
-  },
-  {
-    name: "Febuary",
-    sales: 6000,
-    cost: 3000,
-    revenue: 2000,
-  },
-  {
-    name: "March",
-    sales: 4900,
-    cost: 2900,
-    revenue: 2000,
-  },
-  {
-    name: "April",
-    sales: 3245,
-    cost: 2000,
-    revenue: 1245,
-  },
-  {
-    name: "May",
-    sales: 4000,
-    cost: 1500,
-    revenue: 2500,
-  },
-  {
-    name: "June",
-    sales: 4700,
-    cost: 3000,
-    revenue: 1700,
-  },
-];
 
 export const Chart: React.FC<LineChartProps> = () => {
   return (
     <ContainerChart id="analytics">
+      <TitleChart>Analytics</TitleChart>
       <ResponsiveContainer>
         <LineChart
           width={600}
           height={300}
-          data={data}
+          data={chartLineData}
           margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
         >
           <Line type="monotone" dataKey="sales" stroke="#82ca9d" />
